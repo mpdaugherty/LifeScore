@@ -1,0 +1,17 @@
+* Features
+
+** TODO Use Amazon SES to send emails (instead of localhost)
+** TODO Deploy to server with crontab so I get an email every night at 8pm
+** TODO Write a README.md
+** TODO Add a SQLite DB that keeps track of the current level for each different plugin
+
+The score for each plugin can be recalculated each day and may go up and down, but the level never goes below the previous highest level reached
+
+** TODO Add an HTML outputter so I can put this up as static content at www.mpdaugherty.com/lifeScore and check my stats and levels!
+** TODO When I go up a level, add a special note to the email
+
+* Plugins
+
+** TODO After setting up my blog, add a plugin that scores how many comments I've received in the last month
+** TODO Write a plugin for fitocracy.  Should be straightforward:
+** TODO Write a plugin for idonethis.com (?)
