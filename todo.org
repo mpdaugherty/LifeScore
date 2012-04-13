@@ -1,6 +1,10 @@
 * Features
 
 ** TODO Use Amazon SES to send emails (instead of localhost)
+
+https://github.com/boto/boto (Python AWS Bindings)
+http://amix.dk/blog/post/19619 (Example involving SES specifically)
+
 ** TODO Deploy to server with crontab so I get an email every night at 8pm
 ** TODO Write a README.md
 ** TODO Add a SQLite DB that keeps track of the current level for each different plugin
