@@ -14,4 +14,7 @@ The score for each plugin can be recalculated each day and may go up and down, b
 
 ** TODO After setting up my blog, add a plugin that scores how many comments I've received in the last month
 ** TODO Write a plugin for fitocracy.  Should be straightforward:
+
+http://fitocracy-api.heroku.com/ (there's currently some issue, so it's not answering curl requests)
+
 ** TODO Write a plugin for idonethis.com (?)
