@@ -1,13 +1,22 @@
-# Structure is /plugins/x
-# Config file specifies which plugins are active and what weight is for each plugin.  Some plugins also require config
+from plugins import plugins
+from sendmail import sendmail
 
-import config
+score = 0
+for plugin in plugins:
+    score += plugin.level
 
-for name in config.ACTIVE_PLUGINS:
-    __import__('plugins.{}'.format(name), fromlist=['plugins'])
 
+message = 'Score for today: {}'.format(score)
 
-for plugin in pluginRegistry:
-    score += plugin.score * plugin weight
-    message += calcHeader()
+for plugin in plugins:
+    message += '''
+
+{}:
+
+  Level: {}, Score: {}
+'''.format(plugin.name, plugin.level, plugin.score)
     message += plugin.message
+
+print message
+
+sendmail('Life Score: {}'.format(score), message)

@@ -1,12 +1,15 @@
 from pygithub3 import Github
 from subprocess import Popen, PIPE
 from config import GITHUB_LOGIN, GITHUB_PASSWORD
+from . import Plugin
 
-class GithubPlugin(object):
+class GithubPlugin(Plugin):
     score = 0
     message = ''
+    base_score = 20
+    name = 'GitHub'
 
-    def __init__(self):
+    def calculate(self):
         # API Login
         gh = Github(login=GITHUB_LOGIN, password=GITHUB_PASSWORD)
 
@@ -21,15 +24,12 @@ class GithubPlugin(object):
             numForks += repo.forks
             numRepoWatchers += repo.watchers
 
-        self.score = 5 * numForks + 5 * numFollowers + 3 * numRepoWatchers
+        self.score = 3 * numForks + 2 * numFollowers + 1 * numRepoWatchers
 
         self.message = '''
   Number of forks for all your repos: {}
-  Number of watchers for  your repos: {}
+  Number of watchers for your repos:  {}
   Number of followers:                {}
 '''.format(numForks, numRepoWatchers, numFollowers)
 
-ghp = GithubPlugin()
-
-print ghp.message
 
