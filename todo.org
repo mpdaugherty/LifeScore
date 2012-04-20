@@ -1,11 +1,13 @@
 * Features
 
-** TODO Use Amazon SES to send emails (instead of localhost)
+** DONE Use Amazon SES to send emails (instead of localhost)
+   CLOSED: [2012-04-20 Fri 14:54]
 
 https://github.com/boto/boto (Python AWS Bindings)
 http://amix.dk/blog/post/19619 (Example involving SES specifically)
 
-** TODO Deploy to server with crontab so I get an email every night at 8pm
+** DONE Deploy to server with crontab so I get an email every night at 8pm
+   CLOSED: [2012-04-20 Fri 14:54]
 ** TODO Write a README.md
 ** TODO Add a SQLite DB that keeps track of the current level for each different plugin
 
@@ -13,12 +15,28 @@ The score for each plugin can be recalculated each day and may go up and down, b
 
 ** TODO Add an HTML outputter so I can put this up as static content at www.mpdaugherty.com/lifeScore and check my stats and levels!
 ** TODO When I go up a level, add a special note to the email
+** TODO Scoring across plugins:
+
+Idea: Rank plugins, use LAAAM calculation for weight.  Then, multiply
+their levels and add up using the LAAM methodology (therefore, no big
+advantage to adding lots of goals; really only the first 3-4 make much
+of a difference).  Round down to get level.
+
+To figure out points and progress to next goal, can use % to next
+level + remainder from the LAAAM calculation.  (Then normalize it
+across an increasing # of points per level)
 
 * Plugins
 
 ** TODO After setting up my blog, add a plugin that scores how many comments I've received in the last month
+** TODO RescueTime
 ** TODO Write a plugin for fitocracy.  Should be straightforward:
 
 http://fitocracy-api.heroku.com/ (there's currently some issue, so it's not answering curl requests)
+
+Also, profiles are hidden unless the user logs in.  I could write my
+own unofficial API like the fitocracy-api.heroku.com?  I log in with
+my username/pass and get info; make it available over HTTP?  Request
+from the same IP address have to wait 10min in between?
 
 ** TODO Write a plugin for idonethis.com (?)

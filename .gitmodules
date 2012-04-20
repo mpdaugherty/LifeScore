@@ -1,0 +1,3 @@
+[submodule "sesmail"]
+	path = sesmail
+	url = git://gist.github.com/976480.git
