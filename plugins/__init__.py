@@ -2,6 +2,8 @@ import os
 import glob
 import math
 
+from config import ACTIVE_PLUGINS
+
 # This is from http://martyalchin.com/2008/jan/10/simple-plugin-framework/
 # Great article, BTW
 class PluginMount(type):
@@ -24,7 +26,7 @@ class PluginMount(type):
 class Plugin(object):
     __metaclass__ = PluginMount
 
-    _score_multiplier = 1.1
+    _score_multiplier = 1.10
     _level_points = []
 
     score = 0
@@ -66,6 +68,8 @@ class Plugin(object):
 
 # Import all the plugins in this directory
 __all__ = [ os.path.basename(f)[:-3] for f in glob.glob(os.path.dirname(__file__)+"/*.py")]
+# Filter so we only have the active plugins enabled
+__all__ = filter(lambda x: x in ACTIVE_PLUGINS, __all__)
 from . import *
 
 # Expose the list of plugins in a slightly better way
