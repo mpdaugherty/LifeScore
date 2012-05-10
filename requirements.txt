@@ -5,3 +5,4 @@ chardet==1.0.1
 pygithub3==0.3
 requests==0.11.1
 wsgiref==0.1.2
+icalendar==3.0.1b2
